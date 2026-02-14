@@ -1,111 +1,85 @@
 import Image from "next/image";
-import Link from "next/link";
-import { ShieldCheck, ArrowRight, Star } from "lucide-react";
+import { ShieldCheck, ArrowRight, CheckCircle2 } from "lucide-react";
 
 export default function Hero() {
   return (
     <section className="relative w-full min-h-screen flex items-center overflow-hidden bg-white">
-      {/* BACKGROUND IMAGE WITH GRADIENT OVERLAY */}
+      {/* IMPROVED BACKGROUND: Full coverage on mobile, Split on Desktop */}
       <div className="absolute inset-0 z-0">
         <Image
           src="/images/bg/3.jpg"
           alt="Clean modern home"
           fill
           priority
-          className="object-cover object-center"
+          className="object-cover object-[center_right] lg:object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
+        {/* Mobile: Bottom-to-Top Gradient (Darker text protection) */}
+        <div className="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-white/20 lg:hidden" />
+        
+        {/* Desktop: Left-to-Right Split */}
+        <div className="hidden lg:block absolute inset-0 bg-gradient-to-r from-white via-white/90 to-transparent" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 w-full relative z-10 pt-20">
-        <div className="max-w-2xl">
-          {/* TRUST BADGE */}
-          <div className="inline-flex items-center gap-2 bg-green-50 border border-green-100 px-4 py-2 rounded-full mb-6">
-            <ShieldCheck className="w-5 h-5 text-green-600" />
-            <span className="text-xs font-bold text-green-700 uppercase tracking-[0.15em]">
-              Licensed & Professional
+      <div className="max-w-7xl mx-auto px-6 w-full relative z-10">
+        <div className="max-w-3xl pt-24 lg:pt-0">
+          {/* MINIMALIST BADGE */}
+          <div className="inline-flex items-center gap-2 bg-green-600 px-3 py-1.5 rounded-lg mb-8 shadow-lg shadow-green-200">
+            <ShieldCheck className="w-4 h-4 text-white" />
+            <span className="text-[10px] font-black text-white uppercase tracking-[0.2em]">
+              Licensed & WHO-Approved
             </span>
           </div>
 
-          {/* MAIN HEADING - Updated to Green Theme */}
-          <h1 className="text-5xl md:text-7xl font-black text-gray-900 leading-[1.1] mb-6">
-            Protect What <br />
-            <span className="text-green-600 text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-500">
-              Matters Most.
-            </span>
+          {/* IMPACTFUL TYPOGRAPHY */}
+          <h1 className="text-6xl md:text-9xl font-black text-gray-900 leading-[0.85] mb-8 tracking-tighter">
+            Total Pest <br />
+            <span className="text-green-600">Freedom.</span>
           </h1>
 
-          {/* SUBHEADING */}
-          <p className="text-lg md:text-xl text-gray-600 mb-10 leading-relaxed max-w-lg">
-            Safe, Eco-Friendly Pest Control for your Home & Family. Experience a
-            pest-free environment with our professional WHO-approved treatments.
-          </p>
+          {/* CLEAN FEATURE LIST */}
+          <div className="space-y-4 mb-12 border-l-4 border-green-500 pl-6">
+            <div className="flex items-center gap-3">
+              <CheckCircle2 className="w-5 h-5 text-green-600 flex-shrink-0" />
+              <span className="text-lg font-bold text-gray-800">Kid & Pet Safe Solutions</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <CheckCircle2 className="w-5 h-5 text-green-600 flex-shrink-0" />
+              <span className="text-lg font-bold text-gray-800">2-Hour Emergency Response</span>
+            </div>
+          </div>
 
-          {/* CTA BUTTONS - Updated to Green Theme */}
-          <div className="flex flex-col sm:flex-row gap-4 mb-12">
+          {/* ACTION BUTTONS */}
+          <div className="flex flex-col sm:flex-row items-center gap-8">
             <a
               href="https://wa.me/9318397840"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-green-600 hover:bg-green-700 text-white px-10 py-5 rounded-2xl font-black text-center transition-all shadow-xl shadow-green-100 flex items-center justify-center gap-3 group"
+              className="w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white px-12 py-6 rounded-2xl font-black text-center transition-all shadow-2xl shadow-green-200 flex items-center justify-center gap-3 group active:scale-95"
             >
-              BOOK A FREE INSPECTION
+              GET A FREE QUOTE
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
-          </div>
 
-          {/* SOCIAL PROOF / RATINGS */}
-          <div className="flex items-center gap-6 border-t border-gray-100 pt-8">
-            <div className="flex -space-x-3">
-              {[1, 2, 3, 4].map((i) => (
-                <div
-                  key={i}
-                  className="w-12 h-12 rounded-full border-4 border-white overflow-hidden bg-gray-100"
-                >
-                  <img
-                    src={`/images/user/${i}.jpg`}
-                    alt="Customer"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              ))}
-            </div>
-            <div>
-              <div className="flex gap-1 mb-1">
-                {[...Array(5)].map((_, i) => (
-                  <Star
-                    key={i}
-                    size={14}
-                    className="fill-amber-400 text-amber-400"
-                  />
-                ))}
-              </div>
-              <p className="text-sm font-bold text-gray-900">
-                Trusted by 1000+ Happy Customers
-              </p>
+            <div className="flex flex-col items-center sm:items-start">
+              <span className="text-xs font-black text-gray-500 uppercase tracking-widest">Speak to an Expert</span>
+              <a href="tel:+919318397840" className="text-2xl font-black text-gray-900 hover:text-green-600 transition-colors">
+                +91 93183 97840
+              </a>
             </div>
           </div>
         </div>
       </div>
 
-      {/* FLOATING STATUS CARD (Bottom Right) */}
-      <div className="absolute bottom-10 right-10 hidden lg:block">
-        <div className="bg-white/90 backdrop-blur-md p-6 rounded-3xl border border-white shadow-2xl flex items-center gap-4 animate-bounce-slow">
-          <div className="relative">
-            <div className="w-12 h-12 bg-green-500 rounded-2xl flex items-center justify-center text-white font-bold">
-              24/7
-            </div>
-            <span className="absolute -top-1 -right-1 flex h-3 w-3">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
-            </span>
-          </div>
-          <p className="text-sm font-black text-gray-800 leading-tight">
-            Emergency <br /> Service Available
-          </p>
-        </div>
+      {/* MINIMAL BOTTOM STATUS */}
+      <div className="absolute bottom-10 left-6 lg:left-12 flex items-center gap-3">
+        <span className="relative flex h-3 w-3">
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+          <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+        </span>
+        <span className="text-[10px] font-black text-gray-600 uppercase tracking-[0.3em]">
+          Available Now In Your Area
+        </span>
       </div>
     </section>
   );
-}
+} 

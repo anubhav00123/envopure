@@ -3,13 +3,13 @@ import { ArrowRight, CheckCircle2, Phone, ShieldCheck } from "lucide-react";
 
 export default function About() {
   return (
-    <section id="about" className="relative bg-slate-50 py-24 overflow-hidden">
+    <section id="about" className="relative bg-slate-50 py-12 lg:py-24 overflow-hidden">
       {/* Decorative Background Element */}
       <div className="absolute top-0 right-0 w-1/3 h-full bg-blue-50/50 -skew-x-12 transform translate-x-1/2 -z-10" />
 
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
-        {/* LEFT IMAGES: Enhanced with depth and accents */}
-        <div className="relative group">
+        {/* LEFT IMAGES: Hidden on mobile (hidden), shown on desktop (lg:block) */}
+        <div className="relative group hidden lg:block">
           <div className="relative rounded-2xl overflow-hidden shadow-2xl z-10">
             <Image
               src="/images/people.jpg"
@@ -22,7 +22,7 @@ export default function About() {
           </div>
 
           {/* Floating Experience Card */}
-          <div className="absolute -top-6 -right-6 bg-green-600 text-white p-6 rounded-2xl shadow-xl z-20 hidden sm:block text-center">
+          <div className="absolute -top-6 -right-6 bg-green-600 text-white p-6 rounded-2xl shadow-xl z-20 text-center">
             <p className="text-3xl font-bold">5000+</p>
             <p className="text-xs uppercase tracking-wider opacity-90">
               Homes Protected
@@ -55,7 +55,7 @@ export default function About() {
           </div>
         </div>
 
-        {/* RIGHT CONTENT: Improved typography and visual hierarchy */}
+        {/* RIGHT CONTENT */}
         <div className="relative">
           <div className="inline-flex items-center gap-2 bg-green-50 border border-green-100 px-4 py-2 rounded-full mb-6">
             <ShieldCheck className="w-5 h-5 text-green-600" />
@@ -85,7 +85,6 @@ export default function About() {
             </p>
           </div>
 
-          {/* FEATURES: Icons instead of plain text */}
           <div className="grid sm:grid-cols-2 gap-y-4 gap-x-8 mb-12">
             {[
               "Experienced Professionals",
@@ -100,9 +99,7 @@ export default function About() {
             ))}
           </div>
 
-          {/* BUTTON: More prominent CTA */}
           <div className="flex flex-wrap gap-6 items-center">
-            {/* PRIMARY ACTION */}
             <a
               className="group relative bg-green-600 hover:bg-green-700 text-white px-9 py-4 rounded-xl font-black tracking-wide transition-all duration-300 shadow-[0_15px_30px_-5px_rgba(22,163,74,0.3)] active:scale-95 flex items-center gap-3"
               href="https://wa.me/9318397840"
@@ -113,15 +110,12 @@ export default function About() {
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
 
-            {/* PHONE ACTION */}
             <a
               href="tel:+919318397840"
               className="group flex items-center gap-4 transition-all duration-300"
             >
               <div className="relative">
-                {/* Breathing Animation Effect */}
                 <div className="absolute inset-0 bg-green-500/20 rounded-full animate-ping" />
-
                 <div className="relative w-12 h-12 bg-white border border-gray-100 shadow-sm rounded-full flex items-center justify-center text-green-600 group-hover:bg-green-600 group-hover:text-white transition-all duration-300">
                   <Phone
                     size={20}

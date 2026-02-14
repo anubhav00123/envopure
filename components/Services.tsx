@@ -37,16 +37,8 @@ const services = [
     title: "Wood Borer Control",
     desc: "In-depth timber injections and preservative treatments to stop wood-destroying beetles in their tracks.",
   },
-  {
-    icon: Bird,
-    title: "Bird Control",
-    desc: "Humane spikes, netting, and deterrent systems to prevent nesting and protect your building's exterior.",
-  },
-  {
-    icon: Scissors,
-    title: "Flea Control",
-    desc: "Multi-stage liquid treatments targeting eggs, larvae, and adults to break the infestation cycle.",
-  },
+
+
   {
     icon: Zap,
     title: "Bee Control",

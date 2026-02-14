@@ -21,15 +21,19 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
           {/* COLUMN 1: BRAND */}
           <div className="space-y-8">
-            <Link href="/" className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center">
-                <ShieldCheck className="text-white w-7 h-7" />
+            <Link href="/" className="flex items-center gap-3 group relative z-50">
+              <div className="w-10 h-10 md:w-11 md:h-11 flex items-center justify-center transition-transform group-hover:rotate-12">
+                <img
+                  src="/images/logomain.jpeg"
+                  alt="Envopure Logo"
+                  className="w-full h-full object-contain"
+                />
               </div>
               <div>
-                <h2 className="text-2xl font-black text-gray-900 leading-none">
-                  Envopure.
-                </h2>
-                <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mt-1">
+                <h1 className="text-xl md:text-2xl font-black text-gray-900 leading-none">
+                  Envopure<span className="text-green-500">.</span>
+                </h1>
+                <p className="text-[8px] md:text-[10px] font-bold text-gray-400 uppercase tracking-widest mt-1">
                   Safe • Fresh • Pure
                 </p>
               </div>
@@ -57,22 +61,42 @@ export default function Footer() {
               Navigation
             </h3>
             <ul className="space-y-4">
-              {["Services", "About Us", "Contact Us"].map(
-                (link) => (
-                  <li key={link}>
-                    <Link
-                      href={`/${link.toLowerCase().replace(" ", "-")}`}
-                      className="group text-gray-500 hover:text-green-600 text-sm font-bold flex items-center gap-2 transition-colors"
-                    >
-                      <ChevronRight
-                        size={14}
-                        className="text-gray-300 group-hover:text-green-500 transition-colors"
-                      />
-                      {link}
-                    </Link>
-                  </li>
-                )
-              )}
+              <li>
+                <Link
+                  href="/services"
+                  className="group text-gray-500 hover:text-green-600 text-sm font-bold flex items-center gap-2 transition-colors"
+                >
+                  <ChevronRight
+                    size={14}
+                    className="text-gray-300 group-hover:text-green-500 transition-colors"
+                  />
+                  Services
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/about"
+                  className="group text-gray-500 hover:text-green-600 text-sm font-bold flex items-center gap-2 transition-colors"
+                >
+                  <ChevronRight
+                    size={14}
+                    className="text-gray-300 group-hover:text-green-500 transition-colors"
+                  />
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/contact"
+                  className="group text-gray-500 hover:text-green-600 text-sm font-bold flex items-center gap-2 transition-colors"
+                >
+                  <ChevronRight
+                    size={14}
+                    className="text-gray-300 group-hover:text-green-500 transition-colors"
+                  />
+                  Contact Us
+                </Link>
+              </li>
             </ul>
           </div>
 
