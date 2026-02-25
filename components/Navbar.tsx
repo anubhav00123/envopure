@@ -31,7 +31,7 @@ export default function Navbar() {
         <Link href="/" className="flex items-center gap-3 group relative z-50">
           <div className="w-10 h-10 md:w-11 md:h-11 flex items-center justify-center transition-transform group-hover:rotate-12">
             <img
-              src="/images/logomain.jpeg"
+              src="/images/logo.jpeg"
               alt="Envopure Logo"
               className="w-full h-full object-contain"
             />
