@@ -1,0 +1,10 @@
+# robots.txt for Envopure
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# Sitemap location
+Sitemap: https://www.envopure.in/sitemap.xml
+
+# Crawl delay
+Crawl-delay: 1
