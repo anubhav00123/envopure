@@ -30,9 +30,9 @@ export default function Footer() {
                 />
               </div>
               <div>
-                <h1 className="text-xl md:text-2xl font-black text-gray-900 leading-none">
+                <p className="text-xl md:text-2xl font-black text-gray-900 leading-none">
                   Envopure<span className="text-green-500">.</span>
-                </h1>
+                </p>
                 <p className="text-[8px] md:text-[10px] font-bold text-gray-400 uppercase tracking-widest mt-1">
                   Safe • Fresh • Pure
                 </p>

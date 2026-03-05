@@ -49,9 +49,9 @@ const MainServices = () => {
               Our Expertise
             </h3>
             <div className="w-16 h-1 bg-green-500 mt-2 mb-6" />
-            <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
+            <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
               Comprehensive Solutions <br /> For Every Pest Problem
-            </h1>
+            </h2>
           </div>
         </section>
 

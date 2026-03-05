@@ -1,6 +1,12 @@
 import { Phone, Mail, MessageSquare, Send } from "lucide-react";
 
-export default function ContactUsPage() {
+type ContactUsPageProps = {
+  titleAs?: "h1" | "h2";
+};
+
+export default function ContactUsPage({ titleAs = "h2" }: ContactUsPageProps) {
+  const TitleTag = titleAs;
+
   return (
     <section className="bg-white py-24 px-6 overflow-hidden">
       <div className="max-w-7xl mx-auto">
@@ -10,10 +16,10 @@ export default function ContactUsPage() {
             Get In Touch
           </h3>
           <div className="w-12 h-1 bg-green-500 rounded-full mb-6" />
-          <h2 className="text-4xl md:text-5xl font-black text-gray-900 leading-tight">
+          <TitleTag className="text-4xl md:text-5xl font-black text-gray-900 leading-tight">
             Ready to live <br />
             <span className="text-green-600">Pest-Free?</span>
-          </h2>
+          </TitleTag>
         </div>
 
         <div className="grid lg:grid-cols-12 gap-8 items-stretch">
